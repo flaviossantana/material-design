@@ -7,24 +7,39 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/main_email"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/main_email_il"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        android:inputType="textEmailAddress"
-        android:hint="Seu email..." />
+        android:layout_marginTop="32dp">
 
-    <android.support.v7.widget.AppCompatEditText
-        android:id="@+id/main_senha"
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/main_email_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/seu_email"
+            android:inputType="textEmailAddress" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/main_senha_il"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        android:inputType="textPassword"
-        android:hint="Sua senha..." />
+        android:layout_marginTop="32dp">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/main_senha_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/sua_senha"
+            android:inputType="textPassword" />
+
+    </android.support.design.widget.TextInputLayout>
+
 
 </LinearLayout>

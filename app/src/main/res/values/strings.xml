@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Material Design</string>
+    <string name="seu_email">Seu email...</string>
+    <string name="sua_senha">Sua senha...</string>
 </resources>
