@@ -16,10 +16,10 @@
         android:layout_marginTop="32dp">
 
         <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/main_email_et"
+            android:id="@+id/main_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/seu_email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress" />
     </android.support.design.widget.TextInputLayout>
 
@@ -33,13 +33,23 @@
         android:layout_marginTop="32dp">
 
         <android.support.v7.widget.AppCompatEditText
-            android:id="@+id/main_senha_et"
+            android:id="@+id/main_senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/sua_senha"
+            android:hint="@string/senha"
             android:inputType="textPassword" />
 
     </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/main_btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/login"
+        />
 
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Material Design</string>
-    <string name="seu_email">Seu email...</string>
-    <string name="sua_senha">Sua senha...</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="login">Login</string>
 </resources>
