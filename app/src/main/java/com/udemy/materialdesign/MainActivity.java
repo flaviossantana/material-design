@@ -32,16 +32,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-
-
     }
 
     @OnClick(R.id.main_btn_login)
     public void onClickLogin(){
-
         validarLogin();
-
     }
 
     private void validarLogin(){

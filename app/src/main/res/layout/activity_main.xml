@@ -30,7 +30,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginTop="32dp">
+        android:layout_marginTop="32dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="8"
+        app:passwordToggleEnabled="true"
+        >
 
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/main_senha"
@@ -48,6 +52,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginTop="32dp"
+        android:maxLength="8"
         android:text="@string/login"
         />
 
