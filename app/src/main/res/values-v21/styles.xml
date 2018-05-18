@@ -11,7 +11,7 @@
     </style>
 
     <style name="FlatButton" parent="Widget.AppCompat.Button.Borderless">
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
     </style>
 
 </resources>
