@@ -4,5 +4,11 @@
     <style name="MaterialTheme" parent="AppTheme">
         <item name="android:navigationBarColor">@color/colorPrimary</item>
     </style>
+    
+    <style name="RaisedButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:backgroundTint">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorTextIcon</item>
+
+    </style>
 
 </resources>

@@ -1,10 +1,12 @@
-package com.udemy.materialdesign;
+package com.udemy.materialdesign.ui;
 
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatEditText;
 import android.widget.Button;
+
+import com.udemy.materialdesign.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
