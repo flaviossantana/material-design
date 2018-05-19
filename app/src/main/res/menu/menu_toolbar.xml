@@ -8,7 +8,7 @@
         app:showAsAction="always"
         />
     <item
-        android:id="@+id/Carrinho"
+        android:id="@+id/menu_carrinho"
         android:title="Carrinho"
         app:showAsAction="always"
         />
