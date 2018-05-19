@@ -6,11 +6,13 @@
         android:id="@+id/menu_buscar"
         android:title="Bucar"
         app:showAsAction="always"
+        android:icon="@drawable/ic_buscar"
         />
     <item
         android:id="@+id/menu_carrinho"
         android:title="Carrinho"
         app:showAsAction="always"
+        android:icon="@drawable/ic_carrinho"
         />
 
     <item android:id="@+id/menu_configuracao"
