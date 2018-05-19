@@ -9,18 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme">
-        <activity android:name=".ui.TextFieldActivity" />
-        <activity android:name=".ui.BotoesActivity" />
-        <activity
-            android:name=".ui.ToolbarActivity"
-            android:theme="@style/AppThemeNobar"></activity>
         <activity android:name=".ui.ListaConteudoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.TextFieldActivity" />
+        <activity android:name=".ui.BotoesActivity" />
+        <activity android:name=".ui.ToolbarActivity" android:theme="@style/AppThemeNobar" />
+        <activity android:name=".ui.NavigationDrawerActivity" android:theme="@style/AppThemeNobar"></activity>
     </application>
 
 </manifest>
