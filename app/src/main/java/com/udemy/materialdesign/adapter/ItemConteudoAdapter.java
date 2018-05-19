@@ -49,19 +49,20 @@ public class ItemConteudoAdapter extends BaseAdapter {
 
         View itemPacoteView = LayoutInflater.from(context).inflate(R.layout.item_conteudo, paarent, false);
 
-        Conteudo pacote = getItem(index);
+        Conteudo conteudo = getItem(index);
 
         PacoteHolder pacoteHolder = new PacoteHolder(itemPacoteView);
-        pacoteHolder.secao.setText(pacote.getSecao());
-        pacoteHolder.conteudo.setText(pacote.getConteudo());
-        recuperarImagem(pacote, pacoteHolder);
+        pacoteHolder.secao.setText(conteudo.getSecao());
+        pacoteHolder.conteudo.setText(conteudo.getConteudo());
+        recuperarImagem(conteudo, pacoteHolder);
 
         return itemPacoteView;
     }
 
     private void recuperarImagem(Conteudo pacote, PacoteHolder pacoteHolder) {
         Drawable drawable = ImagemUtil.recuperarImagem(context, pacote.getImagem());
-        pacoteHolder.imagem.setImageDrawable(drawable);
+        Drawable resizeDrawble = ImagemUtil.resize(context, drawable);
+        pacoteHolder.imagem.setImageDrawable(resizeDrawble);
     }
 
 

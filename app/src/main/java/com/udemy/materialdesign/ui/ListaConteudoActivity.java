@@ -31,6 +31,7 @@ public class ListaConteudoActivity extends AppCompatActivity {
         conteudos.add(new Conteudo(1, "Seção: 04", "TextField", "img_01"));
         conteudos.add(new Conteudo(2, "Seção: 05", "Buttons", "img_02"));
         conteudos.add(new Conteudo(3, "Seção: 06", "Toolbar", "img_03"));
+        conteudos.add(new Conteudo(4, "Seção: 07", "Navigation Drawer", "img_04"));
 
         listaPacoteView.setAdapter(new ItemConteudoAdapter(this, conteudos));
     }
