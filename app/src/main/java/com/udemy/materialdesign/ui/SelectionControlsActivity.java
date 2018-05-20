@@ -25,8 +25,14 @@ public class SelectionControlsActivity extends AppCompatActivity {
     }
 
     @OnCheckedChanged(R.id.sc_switch)
-    public void onc(CompoundButton buttonView, boolean isChecked){
+    public void onChangeSwitch(CompoundButton buttonView, boolean isChecked){
         Toast.makeText(this, isChecked ? "Ligando...": "Desligando...", Toast.LENGTH_SHORT).show();
     }
+
+    @OnCheckedChanged(R.id.sc_checkbox)
+    public void onChangeCheckbox(CompoundButton buttonView, boolean isChecked){
+        Toast.makeText(this, isChecked ? "Quero!": "Não Quero!", Toast.LENGTH_SHORT).show();
+    }
+
 
 }
