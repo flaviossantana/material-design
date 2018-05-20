@@ -3,4 +3,6 @@
     <string name="email">Email</string>
     <string name="senha">Senha</string>
     <string name="login">Login</string>
+    <string name="abrir">Abrir</string>
+    <string name="fechar">Fechar</string>
 </resources>
