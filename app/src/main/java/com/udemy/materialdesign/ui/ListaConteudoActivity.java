@@ -18,6 +18,8 @@ import butterknife.OnItemClick;
 
 public class ListaConteudoActivity extends AppCompatActivity {
 
+    private List<Conteudo> conteudos = new ArrayList<Conteudo>();
+
     @BindView(R.id.lista_pacotes_listview)
     public ListView listaPacoteView;
 
@@ -27,13 +29,17 @@ public class ListaConteudoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_conteudo);
         ButterKnife.bind(this);
 
-        List<Conteudo> conteudos = new ArrayList<Conteudo>();
-        conteudos.add(new Conteudo(1, "Seção: 04", "TextField", "img_01"));
-        conteudos.add(new Conteudo(2, "Seção: 05", "Buttons", "img_02"));
-        conteudos.add(new Conteudo(3, "Seção: 06", "Toolbar", "img_03"));
-        conteudos.add(new Conteudo(4, "Seção: 07", "Navigation Drawer", "img_04"));
+        novoConteudo(1, "Seção: 04", "TextField", "img_01");
+        novoConteudo(2, "Seção: 05", "Buttons", "img_02");
+        novoConteudo(3, "Seção: 06", "Toolbar", "img_03");
+        novoConteudo(4, "Seção: 07", "Navigation Drawer", "img_04");
+        novoConteudo(5, "Seção: 08", "Selection Controls", "img_05");
 
         listaPacoteView.setAdapter(new ItemConteudoAdapter(this, conteudos));
+    }
+
+    private void novoConteudo(int id, String secao, String descricao, String imagem) {
+        conteudos.add(new Conteudo(id, secao, descricao, imagem));
     }
 
     @OnItemClick(R.id.lista_pacotes_listview)
@@ -56,6 +62,10 @@ public class ListaConteudoActivity extends AppCompatActivity {
             }
             case 4: {
                 goActivity(NavigationDrawerActivity.class);
+                break;
+            }
+            case 5: {
+                goActivity(SelectionControlsActivity.class);
                 break;
             }
         }
