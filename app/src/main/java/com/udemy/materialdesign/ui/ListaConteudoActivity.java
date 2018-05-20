@@ -1,8 +1,8 @@
 package com.udemy.materialdesign.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import com.udemy.materialdesign.R;
@@ -52,6 +52,10 @@ public class ListaConteudoActivity extends AppCompatActivity {
             }
             case 3: {
                 goActivity(ToolbarActivity.class);
+                break;
+            }
+            case 4: {
+                goActivity(NavigationDrawerActivity.class);
                 break;
             }
         }
