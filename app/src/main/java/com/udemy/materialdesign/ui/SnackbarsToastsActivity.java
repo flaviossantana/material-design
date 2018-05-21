@@ -30,7 +30,14 @@ public class SnackbarsToastsActivity extends AppCompatActivity {
 
     @OnClick(R.id.st_add_btn)
     public void onClickFloat(View view){
-        Snackbar.make(relativeLay,"Clicado com sucesso.", Snackbar.LENGTH_LONG).show();
+        final Snackbar snackbar = Snackbar.make(view, "CLICADO COM SUCESSO.", Snackbar.LENGTH_LONG);
+        snackbar.setAction("FECHAR", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                snackbar.dismiss();
+            }
+        });
+        snackbar.show();
     }
 
 }
