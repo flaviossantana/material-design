@@ -35,9 +35,9 @@ public class SnackbarsToastsActivity extends AppCompatActivity {
         final Snackbar snackbar = Snackbar.make(view, "CLICADO COM SUCESSO.", Snackbar.LENGTH_LONG);
         snackbar.setAction("FECHAR", onClickFecharSnack(snackbar));
         View snackView = snackbar.getView();
-        snackView.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+        snackView.setBackgroundColor(getResources().getColor(R.color.colorSecondaryDark));
         TextView snackAction = snackView.findViewById(android.support.design.R.id.snackbar_action);
-        snackAction.setTextColor(getResources().getColor(R.color.colorSecondaryDark));
+        snackAction.setTextColor(getResources().getColor(R.color.colorPrimaryText));
         snackbar.show();
     }
 
