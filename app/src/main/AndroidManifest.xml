@@ -25,7 +25,8 @@
             android:name=".ui.NavigationDrawerActivity"
             android:theme="@style/AppThemeNobar" />
         <activity android:name=".ui.SelectionControlsActivity" />
-        <activity android:name=".ui.DialogsActivity"></activity>
+        <activity android:name=".ui.DialogsActivity" />
+        <activity android:name=".ui.SnackbarsToastsActivity"></activity>
     </application>
 
 </manifest>
