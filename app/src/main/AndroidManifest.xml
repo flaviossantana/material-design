@@ -26,7 +26,8 @@
             android:theme="@style/AppThemeNobar" />
         <activity android:name=".ui.SelectionControlsActivity" />
         <activity android:name=".ui.DialogsActivity" />
-        <activity android:name=".ui.SnackbarsToastsActivity"></activity>
+        <activity android:name=".ui.SnackbarsToastsActivity" />
+        <activity android:name=".ui.ProgressActivity"></activity>
     </application>
 
 </manifest>
