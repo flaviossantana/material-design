@@ -16,6 +16,9 @@ public class ProgressActivity extends AppCompatActivity {
     @BindView(R.id.progess_circular)
     public ProgressBar circularProgress;
 
+    @BindView(R.id.progess_linear)
+    public ProgressBar linearProgress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +27,14 @@ public class ProgressActivity extends AppCompatActivity {
 
         circularProgress.setVisibility(View.GONE);
 
+        linearProgress.setProgress(0);
+        linearProgress.setSecondaryProgress(0);
+        linearProgress.setMax(100);
+
         new AsyncProgess().execute();
     }
 
-    public class AsyncProgess extends AsyncTask {
+    public class AsyncProgess extends AsyncTask<Void, Integer, Void> {
 
         @Override
         protected void onPreExecute() {
@@ -35,10 +42,11 @@ public class ProgressActivity extends AppCompatActivity {
         }
 
         @Override
-        protected Object doInBackground(Object[] objects) {
+        protected Void doInBackground(Void... objects) {
 
             for (int i = 0; i < 100; i++){
                 try {
+                    publishProgress(i+1);
                     Thread.sleep(150);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -49,7 +57,13 @@ public class ProgressActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(Object o) {
+        protected void onProgressUpdate(Integer... values) {
+            linearProgress.setProgress(values[0]);
+            linearProgress.setSecondaryProgress(values[0]+10);
+        }
+
+        @Override
+        protected void onPostExecute(Void o) {
             circularProgress.setVisibility(View.GONE);
         }
     }

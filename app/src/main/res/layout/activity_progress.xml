@@ -8,6 +8,15 @@
     android:orientation="vertical">
 
     <ProgressBar
+        android:id="@+id/progess_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        />
+
+
+    <ProgressBar
         android:id="@+id/progess_circular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
