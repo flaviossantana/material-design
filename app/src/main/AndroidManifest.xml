@@ -27,7 +27,8 @@
         <activity android:name=".ui.SelectionControlsActivity" />
         <activity android:name=".ui.DialogsActivity" />
         <activity android:name=".ui.SnackbarsToastsActivity" />
-        <activity android:name=".ui.ProgressActivity"></activity>
+        <activity android:name=".ui.ProgressActivity" />
+        <activity android:name=".ui.AnimacoesTransicoesActivity"></activity>
     </application>
 
 </manifest>

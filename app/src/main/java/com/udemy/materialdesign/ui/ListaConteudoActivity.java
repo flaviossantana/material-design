@@ -37,6 +37,7 @@ public class ListaConteudoActivity extends AppCompatActivity {
         novoConteudo(6, "Seção: 09", "Dialogs", "img_06");
         novoConteudo(7, "Seção: 10", "Snackbars & Toasts", "img_07");
         novoConteudo(8, "Seção: 11", "Progress & Activity", "img_08");
+        novoConteudo(9, "Seção: 17", "Animações & Transições", "img_10");
 
 
         listaPacoteView.setAdapter(new ItemConteudoAdapter(this, conteudos));
@@ -82,6 +83,10 @@ public class ListaConteudoActivity extends AppCompatActivity {
             }
             case 8: {
                 goActivity(ProgressActivity.class);
+                break;
+            }
+            case 9: {
+                goActivity(AnimacoesTransicoesActivity.class);
                 break;
             }
         }
