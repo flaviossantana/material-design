@@ -1,11 +1,10 @@
 package com.udemy.materialdesign.ui;
 
 import android.os.Bundle;
-import android.support.transition.AutoTransition;
-import android.support.transition.ChangeTransform;
-import android.support.transition.Explode;
 import android.support.transition.Fade;
-import android.support.transition.Slide;
+import android.support.transition.Scene;
+import android.support.transition.Transition;
+import android.support.transition.TransitionInflater;
 import android.support.transition.TransitionManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,6 +20,11 @@ import butterknife.OnClick;
 
 public class AnimacoesTransicoesActivity extends AppCompatActivity {
 
+    private Scene cena1;
+    private Scene cena2;
+
+    private boolean start = true;
+
     @BindView(R.id.at_root)
     public ViewGroup root;
 
@@ -35,14 +39,32 @@ public class AnimacoesTransicoesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animacoes_transicoes);
         ButterKnife.bind(this);
+
+        cena1 = Scene.getSceneForLayout(root, R.layout.activity_animacoes_transicoes, this);
+        cena2 = Scene.getSceneForLayout(root, R.layout.activity_animacoes_transicoes_dois, this);
+
     }
 
     @OnClick(R.id.at_btn_acao)
     public void onClickbtnAcao(View view){
-
         TransitionManager.beginDelayedTransition(root, new Fade());
         imageView.setVisibility(imageView.getVisibility() == View.INVISIBLE ? View.VISIBLE: View.INVISIBLE);
+    }
 
+    public void changeScene(View view){
+
+        Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.custom);
+        Transition transitions = TransitionInflater.from(this).inflateTransition(R.transition.custom_dois);
+
+
+        if(start){
+            TransitionManager.go(cena2, transition);
+            start = false;
+        } else {
+            TransitionManager.go(cena1, transitions);
+            start = true;
+
+        }
 
     }
 

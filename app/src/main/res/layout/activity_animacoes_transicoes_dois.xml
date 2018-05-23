@@ -12,26 +12,19 @@
 
     <ImageView
         android:id="@+id/at_imagem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_gravity="center"
         android:src="@mipmap/ic_launcher_round"
+        android:background="@color/colorPrimary"
         />
 
     <Button
-        android:id="@+id/at_btn_acao"
+        android:id="@+id/at_btn_prev"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Ação"
-        android:onClick="onClickbtnAcao"/>
-
-    <Button
-        android:id="@+id/at_btn_next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="PRÓXIMA"
+        android:text="VOLTAR"
         android:onClick="changeScene"/>
 
 </LinearLayout>
