@@ -28,7 +28,8 @@
         <activity android:name=".ui.DialogsActivity" />
         <activity android:name=".ui.SnackbarsToastsActivity" />
         <activity android:name=".ui.ProgressActivity" />
-        <activity android:name=".ui.AnimacoesTransicoesActivity"></activity>
+        <activity android:name=".ui.AnimacoesTransicoesActivity" android:theme="@style/AppTheme.HOME" />
+        <activity android:name=".ui.AnimacaoDetalhesActivity"></activity>
     </application>
 
 </manifest>

@@ -1,11 +1,13 @@
 package com.udemy.materialdesign.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.transition.Fade;
 import android.support.transition.Scene;
 import android.support.transition.Transition;
 import android.support.transition.TransitionInflater;
 import android.support.transition.TransitionManager;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +51,13 @@ public class AnimacoesTransicoesActivity extends AppCompatActivity {
     public void onClickbtnAcao(View view){
         TransitionManager.beginDelayedTransition(root, new Fade());
         imageView.setVisibility(imageView.getVisibility() == View.INVISIBLE ? View.VISIBLE: View.INVISIBLE);
+    }
+
+    @OnClick(R.id.at_imagem)
+    public void onClickImagem(View view){
+        Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(AnimacoesTransicoesActivity.this).toBundle();
+        Intent intent = new Intent(AnimacoesTransicoesActivity.this, AnimacaoDetalhesActivity.class);
+        startActivity(intent, bundle);
     }
 
     public void changeScene(View view){
