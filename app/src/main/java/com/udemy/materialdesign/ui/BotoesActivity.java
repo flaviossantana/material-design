@@ -11,5 +11,6 @@ public class BotoesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_botoes);
+        setTitle("Meu Titulo");
     }
 }
