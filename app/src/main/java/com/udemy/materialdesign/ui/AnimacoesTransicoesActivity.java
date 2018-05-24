@@ -1,6 +1,7 @@
 package com.udemy.materialdesign.ui;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.transition.Fade;
 import android.support.transition.Scene;
@@ -57,7 +58,14 @@ public class AnimacoesTransicoesActivity extends AppCompatActivity {
     public void onClickImagem(View view){
         Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(AnimacoesTransicoesActivity.this).toBundle();
         Intent intent = new Intent(AnimacoesTransicoesActivity.this, AnimacaoDetalhesActivity.class);
-        startActivity(intent, bundle);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            startActivity(intent, bundle);
+            return;
+        }
+
+        startActivity(intent);
+
     }
 
     public void changeScene(View view){

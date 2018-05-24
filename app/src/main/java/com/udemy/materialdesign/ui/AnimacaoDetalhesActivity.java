@@ -18,8 +18,10 @@ public class AnimacaoDetalhesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_animacao_detalhes);
         ButterKnife.bind(this);
 
-        Slide slide = new Slide(Gravity.BOTTOM);
-        getWindow().setEnterTransition(new Explode());
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            Slide slide = new Slide(Gravity.BOTTOM);
+            getWindow().setEnterTransition(new Explode());
+        }
 
     }
 }
