@@ -89,7 +89,7 @@ public class ListaConteudoActivity extends AppCompatActivity {
                 break;
             }
             case 13: {
-                goActivity(AnimacoesTransicoesActivity.class);
+                goActivity(CollapsingLayoutActivity.class);
                 break;
             }
             case 17: {
