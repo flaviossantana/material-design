@@ -3,12 +3,12 @@
 
     <item
         android:id="@+id/bn_menu_favorito"
-        android:icon="@drawable/ic_favorito"
+        android:icon="@drawable/ic_star_br"
         android:title="Favorito" />
 
     <item
         android:id="@+id/bn_menu_localizacao"
-        android:icon="@drawable/ic_spam"
+        android:icon="@drawable/ic_nav_br"
         android:title="Localização" />
 
     <item
