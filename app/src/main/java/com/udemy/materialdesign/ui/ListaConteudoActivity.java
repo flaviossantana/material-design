@@ -38,6 +38,7 @@ public class ListaConteudoActivity extends AppCompatActivity {
         novoConteudo(7, "Seção: 10", "Snackbars & Toasts", "img_07");
         novoConteudo(8, "Seção: 11", "Progress & Activity", "img_08");
         novoConteudo(13, "Seção: 13", "Collapsing Layout", "img_11");
+        novoConteudo(15, "Seção: 15", "Bottom Navigation", "img_07");
         novoConteudo(17, "Seção: 17", "Animações & Transições", "img_10");
 
 
@@ -90,6 +91,10 @@ public class ListaConteudoActivity extends AppCompatActivity {
             }
             case 13: {
                 goActivity(CollapsingLayoutActivity.class);
+                break;
+            }
+            case 15: {
+                goActivity(BottomNavigationActivity.class);
                 break;
             }
             case 17: {

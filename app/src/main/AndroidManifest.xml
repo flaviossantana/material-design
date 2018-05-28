@@ -32,7 +32,10 @@
             android:name=".ui.AnimacoesTransicoesActivity"
             android:theme="@style/AppTheme.HOME" />
         <activity android:name=".ui.AnimacaoDetalhesActivity" />
-        <activity android:name=".ui.CollapsingLayoutActivity" android:theme="@style/AppTheme.NoActionbar"></activity>
+        <activity
+            android:name=".ui.CollapsingLayoutActivity"
+            android:theme="@style/AppTheme.NoActionbar" />
+        <activity android:name=".ui.BottomNavigationActivity"></activity>
     </application>
 
 </manifest>
