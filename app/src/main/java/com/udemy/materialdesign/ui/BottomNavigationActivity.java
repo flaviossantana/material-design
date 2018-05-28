@@ -1,5 +1,6 @@
 package com.udemy.materialdesign.ui;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -38,9 +39,16 @@ public class BottomNavigationActivity extends AppCompatActivity implements Botto
                 break;
             case (R.id.bn_menu_localizacao) :
                 Toast.makeText(BottomNavigationActivity.this, "Clicou em localizacao", Toast.LENGTH_LONG).show();
+                goActivity(SnackbarsToastsActivity.class);
                 break;
         }
 
         return false;
     }
+
+    private void goActivity(Class aClass) {
+        Intent irActivity = new Intent(this, aClass);
+        startActivity(irActivity);
+    }
+
 }

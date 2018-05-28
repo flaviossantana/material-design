@@ -16,6 +16,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:menu="@menu/bn_menu_bottom_nav"
+            android:theme="@style/CustomBottomNav"
+            app:itemTextColor="@android:color/black"
+            app:itemIconTint="@android:color/black"
             />
 
 
