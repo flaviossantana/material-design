@@ -34,8 +34,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedHolder> {
         holder.titulo.setText(feed.getTitle());
         holder.subtitulo.setText(feed.getAuthor());
         holder.url = feed.getSource();
-        feed.getEnclosure().getUrl();
-        new DownloadImageTask(holder.imagem).execute("https://www.androidpro.com.br/wp-content/uploads/2018/05/navigation-drawer-material-design-383x215.png");
+        new DownloadImageTask(holder.imagem).execute(feed.getEnclosure().getUrl());
     }
 
     @Override

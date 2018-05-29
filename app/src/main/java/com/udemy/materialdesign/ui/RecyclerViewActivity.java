@@ -36,7 +36,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements Callback 
         feedAdapter = new FeedAdapter(feeds);
         recyclerView.setAdapter(feedAdapter);
 
-        PkRSS.with(this).load("http://www.androidpro.com.br/feed/").skipCache().callback(this).async();
+        PkRSS.with(this).load("https://rss.tecmundo.com.br/feed").skipCache().callback(this).async();
 
     }
 
