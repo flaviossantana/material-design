@@ -6,9 +6,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 import com.udemy.materialdesign.R;
 
@@ -30,4 +32,10 @@ public class FeedHolder extends RecyclerView.ViewHolder {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }
+
+    @OnClick(R.id.rv_btn_acessar)
+    public void onClickBtnAcessar(View view){
+        Toast.makeText(view.getContext(), "Click acessar", Toast.LENGTH_SHORT).show();
+    }
+
 }

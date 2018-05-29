@@ -96,7 +96,7 @@ public class ListaConteudoActivity extends AppCompatActivity {
                 break;
             }
             case 14: {
-                goActivity(RecyclerView.Recycler.class);
+                goActivity(RecyclerViewActivity.class);
                 break;
             }
             case 15: {
