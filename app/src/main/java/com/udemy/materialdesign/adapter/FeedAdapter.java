@@ -10,7 +10,6 @@ import com.pkmmte.pkrss.Article;
 import com.udemy.materialdesign.R;
 import com.udemy.materialdesign.holder.FeedHolder;
 import com.udemy.materialdesign.task.DownloadImageTask;
-import com.udemy.materialdesign.util.ImagemUtil;
 
 import java.util.List;
 
@@ -34,11 +33,9 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedHolder> {
         Article feed = feeds.get(position);
         holder.titulo.setText(feed.getTitle());
         holder.subtitulo.setText(feed.getAuthor());
-
-        if(feed.getEnclosure() != null){
-            new DownloadImageTask(holder.imagem).execute(feed.getEnclosure().getUrl());
-        }
-
+        holder.url = feed.getSource();
+        feed.getEnclosure().getUrl();
+        new DownloadImageTask(holder.imagem).execute("https://www.androidpro.com.br/wp-content/uploads/2018/05/navigation-drawer-material-design-383x215.png");
     }
 
     @Override

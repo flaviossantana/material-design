@@ -1,12 +1,13 @@
 package com.udemy.materialdesign.holder;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +29,8 @@ public class FeedHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.rv_btn_acessar)
     public AppCompatButton btnAcessar;
 
+    public Uri url;
+
     public FeedHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
@@ -35,7 +38,9 @@ public class FeedHolder extends RecyclerView.ViewHolder {
 
     @OnClick(R.id.rv_btn_acessar)
     public void onClickBtnAcessar(View view){
-        Toast.makeText(view.getContext(), "Click acessar", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Intent.ACTION_VIEW, this.url);
+        itemView.getContext().startActivity(intent);
+
     }
 
 }
