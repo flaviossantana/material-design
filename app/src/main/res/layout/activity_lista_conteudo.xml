@@ -48,16 +48,15 @@
         app:layout_constraintStart_toStartOf="@+id/pacote_lbl_especial"
         app:layout_constraintTop_toBottomOf="@+id/pacote_lbl_especial" />
 
-    <ListView
-        android:id="@+id/lista_pacotes_listview"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lista_recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:divider="@null"
-        android:dividerHeight="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:listitem="@layout/item_conteudo" />
+        tools:listitem="@layout/item_conteudo"
+        />
 
 </android.support.constraint.ConstraintLayout>

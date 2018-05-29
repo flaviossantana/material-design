@@ -3,11 +3,12 @@ package com.udemy.materialdesign.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ListView;
 
 import com.udemy.materialdesign.R;
-import com.udemy.materialdesign.adapter.ItemConteudoAdapter;
+import com.udemy.materialdesign.adapter.ItemConteudoRecycleAdapter;
+import com.udemy.materialdesign.listener.ItemConteudoClickListner;
 import com.udemy.materialdesign.model.Conteudo;
 
 import java.util.ArrayList;
@@ -15,14 +16,15 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnItemClick;
 
 public class ListaConteudoActivity extends AppCompatActivity {
 
+    @BindView(R.id.lista_recyclerView)
+    public RecyclerView listaConteudo;
+
     private List<Conteudo> conteudos = new ArrayList<Conteudo>();
 
-    @BindView(R.id.lista_pacotes_listview)
-    public ListView listaPacoteView;
+    private ItemConteudoRecycleAdapter itemConteudoRecycleAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,64 +32,73 @@ public class ListaConteudoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_conteudo);
         ButterKnife.bind(this);
 
-        novoConteudo(1, "Seção: 04", "TextField", "img_01");
-        novoConteudo(2, "Seção: 05", "Buttons", "img_02");
-        novoConteudo(3, "Seção: 06", "Toolbar", "img_03");
-        novoConteudo(4, "Seção: 07", "Navigation Drawer", "img_04");
-        novoConteudo(5, "Seção: 08", "Selection Controls", "img_05");
-        novoConteudo(6, "Seção: 09", "Dialogs", "img_06");
-        novoConteudo(7, "Seção: 10", "Snackbars & Toasts", "img_07");
-        novoConteudo(8, "Seção: 11", "Progress & Activity", "img_08");
-        novoConteudo(13, "Seção: 13", "Collapsing Layout", "img_11");
-        novoConteudo(14, "Seção: 14", "Lists (RecyclerView)", "img_04");
-        novoConteudo(15, "Seção: 15", "Bottom Navigation", "img_07");
-        novoConteudo(17, "Seção: 17", "Animações & Transições", "img_10");
-
-
-
-
-        listaPacoteView.setAdapter(new ItemConteudoAdapter(this, conteudos));
+        addConteudo();
+        contedoAdapter();
     }
 
-    private void novoConteudo(int id, String secao, String descricao, String imagem) {
-        conteudos.add(new Conteudo(id, secao, descricao, imagem));
+    private void addConteudo() {
+        novoConteudo(4, "Seção: 04", "TextField", "img_01", TextFieldActivity.class);
+        novoConteudo(5, "Seção: 05", "Buttons", "img_02", BotoesActivity.class);
+        novoConteudo(6, "Seção: 06", "Toolbar", "img_03", ToolbarActivity.class);
+        novoConteudo(7, "Seção: 07", "Navigation Drawer", "img_04", NavigationDrawerActivity.class);
+        novoConteudo(8, "Seção: 08", "Selection Controls", "img_05", SelectionControlsActivity.class);
+        novoConteudo(9, "Seção: 09", "Dialogs", "img_06", DialogsActivity.class);
+        novoConteudo(10, "Seção: 10", "Snackbars & Toasts", "img_07", SnackbarsToastsActivity.class);
+        novoConteudo(11, "Seção: 11", "Progress & Activity", "img_08", ProgressActivity.class);
+        novoConteudo(13, "Seção: 13", "Collapsing Layout", "img_11", CollapsingLayoutActivity.class);
+        novoConteudo(14, "Seção: 14", "Lists (RecyclerView)", "img_04", RecyclerViewActivity.class);
+        novoConteudo(15, "Seção: 15", "Bottom Navigation", "img_07", BottomNavigationActivity.class);
+        novoConteudo(17, "Seção: 17", "Animações & Transições", "img_10", AnimacoesTransicoesActivity.class);
     }
 
-    @OnItemClick(R.id.lista_pacotes_listview)
-    public void onClikListaPacoteListView(int posicao) {
-        Conteudo pacote = (Conteudo) listaPacoteView.getItemAtPosition(posicao);
+    private void novoConteudo(int id, String secao, String descricao, String imagem, Class<? extends AppCompatActivity> activityClass) {
+        conteudos.add(new Conteudo(id, secao, descricao, imagem, activityClass));
+    }
 
+    private void contedoAdapter() {
+        itemConteudoRecycleAdapter = new ItemConteudoRecycleAdapter(this, conteudos);
+        listaConteudo.setLayoutManager(new LinearLayoutManager(this));
+        listaConteudo.setAdapter(itemConteudoRecycleAdapter);
+        itemConteudoRecycleAdapter.setOnClickListner(new ItemConteudoClickListner() {
+            @Override
+            public void onItemClick(int posicao, Conteudo conteudo) {
+                irParaConteudoSelecionado(posicao, conteudo);
+            }
+        });
+    }
 
-        switch (pacote.getId()) {
-            case 1: {
+    public void irParaConteudoSelecionado(int posicao, Conteudo conteudo) {
+
+        switch (conteudo.getId()) {
+            case 4: {
                 goActivity(TextFieldActivity.class);
                 break;
             }
-            case 2: {
+            case 5: {
                 goActivity(BotoesActivity.class);
                 break;
             }
-            case 3: {
+            case 6: {
                 goActivity(ToolbarActivity.class);
                 break;
             }
-            case 4: {
+            case 7: {
                 goActivity(NavigationDrawerActivity.class);
                 break;
             }
-            case 5: {
+            case 8: {
                 goActivity(SelectionControlsActivity.class);
                 break;
             }
-            case 6: {
+            case 9: {
                 goActivity(DialogsActivity.class);
                 break;
             }
-            case 7: {
+            case 10: {
                 goActivity(SnackbarsToastsActivity.class);
                 break;
             }
-            case 8: {
+            case 11: {
                 goActivity(ProgressActivity.class);
                 break;
             }
@@ -112,7 +123,7 @@ public class ListaConteudoActivity extends AppCompatActivity {
     }
 
     private void goActivity(Class aClass) {
-        Intent irActivity = new Intent(ListaConteudoActivity.this, aClass);
+        Intent irActivity = new Intent(this, aClass);
         startActivity(irActivity);
     }
 
